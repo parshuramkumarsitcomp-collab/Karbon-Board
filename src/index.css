@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6fb;
+}
+
+/* BOARD */
+.board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* COLUMN */
+.column {
+  background: #ffffff;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding-bottom: 10px;
+}
+
+/* HEADER */
+.column-header {
+  color: white;
+  padding: 12px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-header small {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.column-header button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+
+/* COLUMN COLORS */
+.todo .column-header {
+  background: #1e90ff;
+}
+
+.progress .column-header {
+  background: #f59e0b;
+}
+
+.done .column-header {
+  background: #10b981;
+}
+
+/* ADD CARD */
+.add-card {
+  margin: 10px;
+  width: calc(100% - 20px);
+  padding: 8px;
+  border: 1px dashed #ccc;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  margin: 10px;
+  padding: 10px 10px 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.card p {
+  flex: 1;
+  margin: 0;
+  cursor: pointer;
+}
+
+.card input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+/* LEFT COLOR BAR */
+.card-bar {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  background: #f59e0b;
+  border-radius: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column;
+  }
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+/* COLUMN HOVER */
+.column {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* CARD HOVER */
+.card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* DELETE ICON HOVER */
+.card button {
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.card button:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* ADD CARD BUTTON HOVER */
+.add-card {
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.add-card:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: #888;
+}
+
+/* HEADER BUTTON (+) HOVER */
+.column-header button {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.column-header button:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* CARD TEXT HOVER */
+.card p:hover {
+  text-decoration: underline;
+}
+
+/* SMOOTH INPUT FOCUS */
+.card input {
+  background: transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.card input:focus {
+  border-bottom-color: #3b82f6;
+}
